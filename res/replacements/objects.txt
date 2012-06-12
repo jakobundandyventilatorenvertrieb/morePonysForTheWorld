@@ -1,6 +1,5 @@
 Baum
 Hund
-Betreungsgeld
 Computer
 Tree
 Dog

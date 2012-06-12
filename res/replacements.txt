@@ -1,0 +1,8 @@
+Baum
+Hund
+Betreungsgeld
+Computer
+Tree
+Dog
+Cat
+Palme

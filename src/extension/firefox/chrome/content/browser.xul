@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://ponify/skin/skin.css" type="text/css"?>
+<!DOCTYPE ponyextension SYSTEM "chrome://ponyextension/locale/translations.dtd">
+<overlay id="sample" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+		<script src="ponify.js" />
+
+		<menupopup id="menu_ToolsPopup">
+			<menuitem label="&runponifyextension;" key="ponify-run-key" oncommand="ponify.run()"/>
+		</menupopup>
+
+		<keyset>
+			<key id="ponify-run-key" modifiers="accel alt shift" key="L" oncommand="ponify.run()"/>
+		</keyset>
+
+		<statusbar id="status-bar">
+			<statusbarpanel id="ponify-status-bar-icon" class="statusbarpanel-iconic" src="chrome://ponify/skin/images/status-bar.jpg" tooltiptext="&runpony;" onclick="ponify.run()" />
+		</statusbar>
+
+		<toolbarpalette id="BrowserToolbarPalette">
+			<toolbarbutton id="ponify-toolbar-button" label="Pony" tooltiptext="&runponifyextension;" oncommand="ponify.run()"/>
+		</toolbarpalette>
+</overlay>

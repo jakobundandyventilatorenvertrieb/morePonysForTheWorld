@@ -1,0 +1,12 @@
+#ponify-toolbar-button {
+	list-style-image: URL("chrome://ponify/skin/images/logo.jpg");
+}
+
+#ponify-status-bar-icon {
+	width: 83px;
+	margin: 0 5px;
+}
+
+.ponify-selected {
+	outline: 2px solid red !important;
+}

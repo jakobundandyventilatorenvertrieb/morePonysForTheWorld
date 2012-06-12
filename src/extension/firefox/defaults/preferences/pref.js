@@ -1,0 +1,1 @@
+pref("extensions.ponify.autorun", false);

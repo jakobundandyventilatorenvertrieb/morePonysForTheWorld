@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-RDF-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-RDF#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>ponify@pony.kahyo.de</em:id>
+
+		<em:name>More Ponys For The World </em:name>
+		<em:version>1.0</em:version>
+		<em:type>2</em:type>
+		<em:creator>Andreas Buchholz</em:creator>
+
+		<em:description>Replaces words with Pony</em:description>
+		<em:homepageURL>http://pony.kahyo.de/</em:homepageURL>
+		<em:optionsURL>chrome://ponify/content/options.xul</em:optionsURL>
+
+		<em:targetApplication>
+
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>2.0</em:minVersion>
+				<em:maxVersion>16.0a1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+</RDF>

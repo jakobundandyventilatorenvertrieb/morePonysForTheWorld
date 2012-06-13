@@ -1,3 +1,9 @@
+#ponify-logo {
+	background: url("chrome://ponify/skin/images/logo.jpg");
+	height: 32px;
+	width: 32px;
+}
+
 #ponify-toolbar-button {
 	list-style-image: URL("chrome://ponify/skin/images/logo.jpg");
 }

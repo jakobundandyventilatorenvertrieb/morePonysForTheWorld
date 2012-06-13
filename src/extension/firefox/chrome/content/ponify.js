@@ -1,6 +1,10 @@
 var ponify = function () {
 	var prefManager = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+
+	var cd = document;
+	var nodes = [];
 	return {
+
 		init : function () {
 			gBrowser.addEventListener("load", function () {
 				var autoRun = prefManager.getBoolPref("extensions.ponify.autorun");
@@ -11,34 +15,61 @@ var ponify = function () {
 		},
 
 		run : function () {
-			var head = content.document.getElementsByTagName("head")[0],
-				style = content.document.getElementById("ponify-style"),
-				allLinks = content.document.getElementsByTagName("a"),
-				foundLinks = 0;
+			this.collectChildNodes(content.document.getElementsByTagName("body")[0]);
+			this.ponify();
+		},
 
-			if (!style) {
-				style = content.document.createElement("link");
-				style.id = "ponify-style";
-				style.type = "text/css";
-				style.rel = "stylesheet";
-				style.href = "chrome://ponify/skin/skin.css";
-				head.appendChild(style);
-			}	
+		ponify: function() {
 
-			for (var i=0, il=allLinks.length; i<il; i++) {
-				elm = allLinks[i];
-				if (elm.getAttribute("target")) {
-					elm.className += ((elm.className.length > 0)? " " : "") + "ponify-selected";
-					foundLinks++;
+			var replacements = this.loadReplacements();
+
+			var replace = this.getReplacer();
+
+			for(var i=0; i<=nodes.length; i++)
+			{
+				var node = nodes[i];
+
+				node.innerHtml = node.innerHtml.replace(replacer, "Pony");
+			}
+
+		},
+
+		getReplacer: function() {
+			return new RegExp("[^a-zA-Z]", "g");
+		},
+
+		collectChildNodes: function( firstElement ) {
+			var startNodes = firstElement.childNodes;
+
+			for(var i=0; i<=startNodes.length; i++)
+			{
+				var node = startNodes[i];
+
+				if( node === null )
+				{
+					continue;
+				}
+
+				if( node.innerHtml.length > 2 )
+				{
+					nodes.push(node);
+				}
+
+				if( node.childNodes.length > 0 )
+				{
+					this.collectChildNodes(node);
 				}
 			}
-			if (foundLinks === 0) {
-				alert("No links found with a target attribute");
-			}
-			else {
-				alert("Found " + foundLinks + " links with a target attribute");
-			}
+		},
+
+		loadReplacements: function() {
+			return [
+				"lorem",
+				"impsum",
+				"sit"
+			];
 		}
+		
 	};
 }();
 window.addEventListener("load", ponify.init, false);

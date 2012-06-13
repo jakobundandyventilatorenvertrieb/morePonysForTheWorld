@@ -4,20 +4,29 @@
 <overlay id="sample" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 		<script src="ponify.js" />
-
+<!--
 		<menupopup id="menu_ToolsPopup">
-			<menuitem label="&runponifyextension;" key="ponify-run-key" oncommand="ponify.run()"/>
+			<menuitem label="&runponify;" key="ponify-run-key" oncommand="ponify.run()"/>
 		</menupopup>
+	-->
 
 		<keyset>
 			<key id="ponify-run-key" modifiers="accel alt shift" key="L" oncommand="ponify.run()"/>
 		</keyset>
-
+<!--
 		<statusbar id="status-bar">
 			<statusbarpanel id="ponify-status-bar-icon" class="statusbarpanel-iconic" src="chrome://ponify/skin/images/status-bar.jpg" tooltiptext="&runpony;" onclick="ponify.run()" />
 		</statusbar>
 
 		<toolbarpalette id="BrowserToolbarPalette">
-			<toolbarbutton id="ponify-toolbar-button" label="Pony" tooltiptext="&runponifyextension;" oncommand="ponify.run()"/>
+			<toolbarbutton id="ponify-toolbar-button" label="Pony" tooltiptext="&runponify;" oncommand="ponify.run()"/>
 		</toolbarpalette>
+-->
+		<menu id="tools_menu">
+			<menuitem name="Ponify!" onclick="ponify.run()" />
+		</menu>
+
+		<menu id="extra_menu">
+			<menuitem name="Ponify-Extra!" onclick="ponify.run()" />
+		</menu>
 </overlay>

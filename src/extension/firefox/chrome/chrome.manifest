@@ -1,8 +1,0 @@
-content     ponify    chrome/content/
-content     ponify    chrome/content/ contentaccessible=yes
-overlay chrome://browser/content/browser.xul chrome://ponify/content/browser.xul
-
-locale	ponify	en-US	locale/en-US/
-
-skin	ponify	classic/1.0	skin/
-style	chrome://global/content/customizeToolbar.xul	chrome://ponify/skin/skin.css
